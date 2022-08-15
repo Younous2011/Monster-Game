@@ -1,5 +1,5 @@
 from player import Player
-from monster import Alien, Monster, Mummy
+from monster import Alien, Mummy
 from comet_event import CometFallEvent
 import pygame
 from sounds import SoundManager
