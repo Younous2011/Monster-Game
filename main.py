@@ -1,11 +1,10 @@
 import pygame
 import math
 from game import Game
+from fps import Fps
 pygame.init()
 
-# definir une clock
-clock = pygame.time.Clock()
-FPS = 60
+fps_game = Fps(60)
 
 
 # generer la fenetre de notre jeu
@@ -86,4 +85,4 @@ while running:
                 # joueur le son
                 game.sound_manager.play('click')
     # fixer le nombre de fps sur ma clock
-    clock.tick(FPS)
+    fps_game.set_fps()
