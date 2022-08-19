@@ -17,10 +17,6 @@ class Monster(animation.AnimateSprite):
         self.loot_amount = 10
         self.start_animation()
 
-    def set_speed(self, speed):
-        self.default_speed = speed
-        self.velocity = 2
-
     def set_loot_amount(self, amount):
         self.loot_amount = amount
 
@@ -32,7 +28,6 @@ class Monster(animation.AnimateSprite):
         if self.health <= 0:
             # Reapparaitre comme un nouveau monstre
             self.rect.x = 1000 + random.randint(0, 300)
-            self.velocity = random.randint(1, self.default_speed)
             self.health = self.max_health
             # ajouter le nombre de points
             self.game.add_score(self.loot_amount)
@@ -67,7 +62,6 @@ class Mummy(Monster):
 
     def __init__(self, game):
         super().__init__(game, "mummy", (130, 130))
-        self.set_speed(3)
         self.set_loot_amount(20)
 
 # definir une classe pour l'alien
@@ -78,5 +72,4 @@ class Alien(Monster):
         self.health = 250
         self.max_health = 250
         self.attack = 0.5
-        self.set_speed(1)
         self.set_loot_amount(80)

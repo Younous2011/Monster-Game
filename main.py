@@ -2,10 +2,17 @@ import pygame
 import math
 from game import Game
 from fps import Fps
+# from level import Level
+from monster import *
 pygame.init()
 
 fps_game = Fps(60)
 
+# level = Level()
+# level.velocity_level_alien = Alien(Game()).velocity
+# level.velocity_level_mummy = Mummy(Game()).velocity
+# # level.set_q_diff()
+# level.set_difficulty()
 
 # generer la fenetre de notre jeu
 pygame.display.set_caption("Comet fall Game")
